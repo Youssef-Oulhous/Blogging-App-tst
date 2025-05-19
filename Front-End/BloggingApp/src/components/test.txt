@@ -1,0 +1,43 @@
+authentication steps : 
+
+    //the middleware steps 
+    // 1. Check if Authorization header exists
+     // 2. Extract token from "Bearer <token>"
+       // 3. Verify token using your JWT secret key
+        // 4. Attach user info to request object
+         // 5. Continue to the next middleware/controller
+
+    the pagging:
+
+useEffect(()=>{
+    axios.get<ProductsResponse>(`http://localhost:5500/api/products?page=${currentPage}&limit=${limit}`)
+    .then((res)=>{
+      setProducts(res.data.products);
+      setTotalPages(res.data.totalPages);
+      
+    })
+    .catch((err)=> console.error(err))
+  },[currentPage]);
+
+////
+const getAllProducts = async(req,res) => {
+    try {
+
+        const page = parseInt(req.query.page) || 1 ;
+        const limit = parseInt(req.query.limit) || 10 ;
+        const skip = (page - 1 ) * limit ;
+
+
+        const products = await Product.find()
+        .skip(skip)
+        .limit(limit)
+        if(products.length === 0)return res.status(404).json({message:'no Product founded'});
+
+        const total = await Product.countDocuments();
+
+        res.status(200).json({
+            currentpage : page,
+            totalPages:Math.ceil(total / limit),
+            totalProducts :total,
+            products
+        });
