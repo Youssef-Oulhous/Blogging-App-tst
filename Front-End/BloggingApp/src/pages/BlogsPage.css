@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Special+Gothic+Condensed+One&family=Special+Gothic+Expanded+One&display=swap');
+
+:root {
+    --font-size-h1: 72px;
+    --font-size-p: 20px;
+    --font-size-button: 18px;
+    --font-size-nav-links: 18px;
+    --font-size-blog-title: 22px;
+    --font-size-author-date: 14px;
+    --line-height: 1.5;
+}
+
+*{
+    box-sizing: border-box;
+    
+}
+html,body{
+    font-size: 62.5%;
+    height: 100%;
+    margin: 0;        
+    padding: 0;        
+    width: 100%;  
+}
+
+body {
+    font-family: 'Roboto' ,sans-serif;
+    font-size: 1.6rem; /* 16px */
+    line-height: 1.6;
+    color: #000000;
+    background-color: #fff;
+    height: 100%;
+    padding-left: 2rem;  
+    padding-right: 2rem ;
+  
+}
+
+.navBar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.navBar h1{
+    font-size: 3.5rem;
+    
+}
+
+
+.navBar input{
+    width: 420px;
+    height: 60px;
+    border: 3px solid black;
+    border-radius: 10px;
+    padding-right: 80px;
+    font-size: 2rem;
+    padding:20px;
+    font-weight: normal;
+
+}
+
+.SearchBtn{
+    width: 100px;
+    height: 55px;
+    border: 3px solid black;
+    border-radius: 5px;
+    background-color: #000000;
+    color: white;
+    font-size: var(--font-size-button);
+    cursor: pointer;
+
+}
+
+/* .searchIn button{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    background-color: white;
+    border: 3px solid black;
+} */
+
+.searchIn {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchIn button img{
+    width: 44px;
+    height: 44px;
+}
+
+
+.createBtn button{
+    width: 188px;
+    height: 50px;
+    font-size: 26px;
+    background-color: #272643;
+    color: white;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: all 0.3s;
+}
+.createBtn button:hover{
+    background-color: #1e1e27;
+}
+
+
+.post{
+    width:1000px ;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    align-items: center;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 50px;
+    margin-top: 50px;  
+    
+
+}
+
+
+
+
+.postImg img{
+    width: 300px;
+    border-radius: 10px;
+    
+}
+
+.postInfos{
+    display: flex;
+    flex-direction: column;
+
+
+
+}
+
+
+.userInfos{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    color: rgb(103, 99, 99);
+}
+.userInfos img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+
+}
+
+
+.PostDes {
+    display: flex;
+    flex-direction: column;
+    line-height: 0.8;
+}
+
+.PostDes h1 {
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.PostDes h1:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+.PostDes p {
+
+    font-size: 16px;
+    color: #383838;
+}
+
+
+@media (max-width : 901px) {
+
+    .post{
+        gap: 30px;
+    }
+    
+    .navBar input{
+        width: 300px;
+    }
+
+
+    .navBar h1{
+        font-size: 3rem;
+    }
+
+    .postImg img{
+        width: 250px;
+    }
+
+    .createBtn button{
+        width: 150px;
+        font-size: 20px;
+        border-radius: 10px;
+    }
+
+    .userInfos img{
+        width: 30px;
+        height: 30px;
+    }
+
+    .PostDes h1{
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    .PostDes p{
+        font-size: 1.4rem;
+        margin-bottom: 80px;
+    }
+
+
+
+
+}
+
+
+@media (max-width : 600px) {
+
+    .post{
+        flex-direction: column;
+
+    }
+    
+    .navBar input{
+        width: 200px;
+        height: 50px;
+        font-size: 1.8rem;
+    }
+
+
+    .navBar h1{
+        font-size: 2.5rem;
+    }
+
+    .postImg img{
+        width: 350px;
+    }
+
+    .createBtn button{
+        width: 100px;
+        font-size: 16px;
+        
+    }
+
+    .PostDes{
+        text-align: center;
+    }
+
+
+    .PostDes h1{
+        font-size: 4rem;
+    }
+
+    .PostDes p{
+        font-size: 1.2rem;
+    }
+
+    .searchIn button{
+        width: 50px;
+        height: 50px;
+    }
+
+    .searchIn button img{
+        width: 25px;
+        height: 25px;
+    }
+
+
+}
+
+
+
+
+
